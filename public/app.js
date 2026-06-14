@@ -674,5 +674,4 @@ window.changePassword = changePassword;
 window.sendResetPassword = sendResetPassword;
 window.downloadPurchase = downloadPurchase;
 
-
 init();
