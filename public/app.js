@@ -440,12 +440,35 @@ async function loadPurchases() {
                     <p>${price} • ${date}</p>
                 </div>
 
-                <a class="btn small" href="${API_BASE}/api/download/${p.id}" target="_blank">
-                    Télécharger
-                </a>
+              <button class="btn small" onclick="downloadPurchase('${p.id}')">
+    Télécharger
+</button>
             </div>
         `;
     }).join("");
+}
+
+async function downloadPurchase(id) {
+    const token = await getAccessToken();
+
+    if (!token) {
+        showToast("Connexion requise", "Reconnecte-toi pour télécharger.");
+        return;
+    }
+
+    const response = await apiFetch(`/api/download/${id}`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    if (!response.ok) {
+        const data = await response.json();
+        showToast("Erreur téléchargement", data.error || "Téléchargement impossible.");
+        return;
+    }
+
+    window.location.href = response.url;
 }
 
 function openProduct(id) {
@@ -649,6 +672,7 @@ window.openPasswordModal = openPasswordModal;
 window.closePasswordModal = closePasswordModal;
 window.changePassword = changePassword;
 window.sendResetPassword = sendResetPassword;
+window.downloadPurchase = downloadPurchase;
 
 
 init();
