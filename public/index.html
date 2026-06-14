@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olyx Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <nav class="navbar">
+        <h1>Olyx Studio</h1>
+
+        <div class="nav-links">
+            <a href="#mods">Mods</a>
+            <a href="#contact">Contact</a>
+
+            <button id="openAuthBtn" class="nav-btn" type="button">
+                Connexion
+            </button>
+
+            <button id="accountBtn" class="nav-btn hidden" type="button">
+                Mon compte
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <h2>Mods <span>FiveM</span> &<br><span>Minecraft</span> Premium</h2>
+
+            <p>
+                Découvrez nos créations exclusives pour FiveM et Minecraft.<br>
+                Scripts optimisés, support réactif et mises à jour régulières.
+            </p>
+
+            <a href="#mods" class="btn">Voir le catalogue <span>➜</span></a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="mods" class="catalogue">
+        <h2><span></span>Catalogue</h2>
+
+        <h3 class="category-title">FiveM</h3>
+
+        <div class="grid">
+            <article class="card">
+                <img src="images/peche.png" alt="Pack Pêche OX" class="card-img">
+
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag">FiveM</span>
+                        <span class="tag">OX</span>
+                    </div>
+
+                    <h3>Pack Pêche OX</h3>
+
+                    <p>
+                        🎣 Système de pêche complet avec niveaux, zones, loot personnalisé,
+                        notifications modernes et interface propre.
+                    </p>
+
+                    <p>
+                        ⚠️ Mods en évolution : une mise à jour future est prévue.
+                    </p>
+
+                    <div class="card-bottom">
+                        <strong>9,99 €</strong>
+
+                        <a class="btn small" href="#" onclick="openProduct('peche'); return false;">
+                            Voir détails
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="images/zombie.png" alt="Zombie Event" class="card-img">
+
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag">FiveM</span>
+                    </div>
+
+                    <h3>Zombie Event</h3>
+
+                    <p>
+                        🧟 Événement zombie complet pour FiveM avec boss, infection,
+                        zones, loots configurables et menu administrateur en jeu.
+                    </p>
+
+                    <div class="card-bottom">
+                        <strong>19,99 €</strong>
+
+                        <a class="btn small" href="#" onclick="openProduct('zombie'); return false;">
+                            Voir détails
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <h3 class="category-title">Minecraft</h3>
+
+        <div class="grid minecraft-grid">
+            <article class="card">
+                <img src="images/survie.png" alt="Système de jobs" class="card-img">
+
+                <div class="card-body">
+                    <div class="tags">
+                        <span class="tag">Minecraft</span>
+                        <span class="tag">Bedrock</span>
+                    </div>
+
+                    <h3>Système de jobs</h3>
+
+                    <p>
+                        ⛏️ Addon Minecraft Bedrock avec menu de métiers, récompenses,
+                        niveaux et administration pour gérer la progression.
+                    </p>
+
+                    <div class="card-bottom">
+                        <strong>Gratuit</strong>
+
+                        <a class="btn small" href="#" onclick="openProduct('jobs'); return false;">
+                            Voir détails
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="info-row">
+        <div class="info-box">
+            <div class="icon">🛒</div>
+
+            <div>
+                <h2>Comment ça fonctionne ?</h2>
+                <p>
+                    Créez un compte, achetez, puis l'achat est ajouté
+                    automatiquement dans votre espace client.
+                </p>
+            </div>
+        </div>
+
+        <div id="contact" class="info-box">
+            <div class="icon">💬</div>
+
+            <div>
+                <h2>Contact</h2>
+                <p>Discord : <b>zNooki</b></p>
+                <p>Email : <b>devznooki@gmail.com</b></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2026 Olyx Studio - Tous droits réservés
+</footer>
+
+<div id="notif" class="notif">
+    <strong>Produit indisponible</strong>
+    <p>🚧 Ce produit n'est pas encore disponible à la vente. Reviens bientôt !</p>
+</div>
+
+<div id="notifMaintenance" class="notif">
+    <strong>Maintenance</strong>
+    <p>🔧 Ce produit est actuellement en maintenance. Revenez plus tard.</p>
+</div>
+
+<div id="toast" class="notif">
+    <strong id="toastTitle">Info</strong>
+    <p id="toastText">Message</p>
+</div>
+
+<div id="productModal" class="product-modal">
+    <div class="product-content">
+        <button class="close-modal" onclick="closeProduct()" type="button">×</button>
+
+        <img id="modalImage" src="" alt="" class="modal-img">
+        <span id="modalTag" class="tag"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <strong id="modalPrice"></strong>
+
+        <a id="modalBuy" class="btn" href="#">
+            Acheter 🛒
+        </a>
+    </div>
+</div>
+
+<div id="authModal" class="product-modal">
+    <div class="product-content auth-content">
+        <button class="close-modal" onclick="closeAuth()" type="button">×</button>
+
+        <h2>Connexion / Inscription</h2>
+        <p class="muted">Créez un compte pour voir votre historique d'achat.</p>
+
+        <label for="authEmail">Email</label>
+        <input id="authEmail" class="input" type="email" placeholder="email@example.com">
+
+        <label for="authPassword">Mot de passe</label>
+        <input id="authPassword" class="input" type="password" placeholder="Mot de passe">
+
+        <div class="auth-actions">
+            <button id="loginBtn" class="btn" type="button">Se connecter</button>
+            <button id="registerBtn" class="btn secondary" type="button">Créer un compte</button>
+        </div>
+    </div>
+</div>
+
+<div id="accountModal" class="product-modal">
+    <div class="product-content auth-content">
+        <button class="close-modal" onclick="closeAccount()" type="button">×</button>
+
+        <h2>Mon compte</h2>
+        <p class="muted">Gérez votre profil et consultez vos achats.</p>
+
+        <div class="account-card">
+            <h3>Profil</h3>
+
+            <div class="email-line">
+                <p><span class="label-bold">Email :</span> <b id="accountEmail">Non connecté</b></p>
+
+                <button class="btn small password-btn" onclick="openPasswordModal()" type="button">
+                    Changer le mot de passe
+                </button>
+            </div>
+
+            <div class="profile-line">
+                <label for="usernameInput">Pseudo :</label>
+
+                <input
+                    id="usernameInput"
+                    class="input"
+                    type="text"
+                    placeholder="Ton pseudo"
+                >
+
+                <button
+                    class="btn small profile-save-btn"
+                    onclick="saveProfile()"
+                    type="button"
+                >
+                    Sauvegarder
+                </button>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <h3>Mes achats</h3>
+
+            <div id="purchasesList">
+                <p>Aucun achat pour le moment.</p>
+            </div>
+        </div>
+
+        <div class="account-actions">
+            <button
+                id="accountLogoutBtn"
+                class="btn secondary"
+                onclick="logout()"
+                type="button"
+            >
+                Déconnexion
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="passwordModal" class="product-modal">
+    <div class="product-content auth-content">
+        <button class="close-modal" onclick="closePasswordModal()" type="button">×</button>
+
+        <h2>Changer le mot de passe</h2>
+        <p class="muted">Entre ton mot de passe actuel puis ton nouveau mot de passe.</p>
+
+        <label for="oldPassword">Mot de passe actuel</label>
+        <input id="oldPassword" class="input" type="password" placeholder="Mot de passe actuel">
+
+        <label for="newPassword">Nouveau mot de passe</label>
+        <input id="newPassword" class="input" type="password" placeholder="Nouveau mot de passe">
+
+        <label for="confirmPassword">Confirmer le nouveau mot de passe</label>
+        <input id="confirmPassword" class="input" type="password" placeholder="Confirmer le mot de passe">
+
+        <button class="btn" onclick="changePassword()" type="button">
+            Modifier le mot de passe
+        </button>
+
+        <button class="btn secondary forgot-btn" onclick="sendResetPassword()" type="button">
+            Mot de passe oublié ? Envoyer un email
+        </button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

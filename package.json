@@ -1,0 +1,21 @@
+{
+  "name": "olyx-studio-store",
+  "version": "1.0.0",
+  "description": "Boutique Olyx Studio avec connexion Supabase + Stripe Checkout + Webhook + historique d'achat.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "stripe": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
