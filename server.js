@@ -400,7 +400,9 @@ app.get("/api/download/:purchaseId", async (req, res) => {
         });
     }
 
-    res.redirect(data.download_url);
+    res.json({
+        url: data.download_url
+    });
 });
 
 app.post("/api/test-free-purchase", async (req, res) => {
