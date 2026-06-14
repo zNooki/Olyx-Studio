@@ -452,8 +452,7 @@ async function downloadPurchase(id) {
     const token = await getAccessToken();
 
     if (!token) {
-        showToast("Connexion requise", "Reconnecte-toi pour télécharger.");
-        return;
+        return showToast("Connexion requise", "Reconnecte-toi pour télécharger.");
     }
 
     const response = await apiFetch(`/api/download/${id}`, {
@@ -462,14 +461,15 @@ async function downloadPurchase(id) {
         }
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-        const data = await response.json();
-        showToast("Erreur téléchargement", data.error || "Téléchargement impossible.");
-        return;
+        return showToast("Erreur téléchargement", data.error || "Téléchargement impossible.");
     }
 
-    window.location.href = response.url;
+    window.open(data.url, "_blank");
 }
+
 
 function openProduct(id) {
     const product = products[id];
