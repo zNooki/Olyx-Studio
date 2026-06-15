@@ -371,7 +371,22 @@ async function loadAccount() {
     }
 
     if (accountGrade) {
-        accountGrade.textContent = result.profile?.grade || "Visiteur";
+        const grade = result.profile?.grade || "Visiteur";
+
+        accountGrade.textContent = grade;
+        accountGrade.className = "grade-badge";
+
+        if (grade === "Visiteur") {
+            accountGrade.classList.add("grade-visiteur");
+        } else if (grade === "Client") {
+            accountGrade.classList.add("grade-client");
+        } else if (grade === "Gérant") {
+            accountGrade.classList.add("grade-gerant");
+        } else if (grade === "Admin") {
+            accountGrade.classList.add("grade-admin");
+        } else {
+            accountGrade.classList.add("grade-visiteur");
+        }
     }
 
     await loadPurchases();
