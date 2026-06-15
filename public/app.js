@@ -622,24 +622,8 @@ function showMaintenance() {
 
 function showToast(title, message) {
 
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.type = "sine";
-    osc.frequency.value = 850;
-
-    gain.gain.value = 0.03;
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-
-    osc.start();
-
-    setTimeout(() => {
-        osc.stop();
-    }, 120);
+    notificationSound.currentTime = 0;
+    notificationSound.play().catch(() => {});
 
     const toast = document.getElementById("toast");
 
