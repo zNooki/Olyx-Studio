@@ -841,28 +841,19 @@ footer {
     flex: none;
 }
 
-.grade-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.grade-badge{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    min-width: 120px;
-    height: 48px;
-    padding: 0 20px;
-    margin: 0;
+    min-width:120px;
+    height:48px;
+    padding:0 20px;
 
-    border-radius: 12px;
-    background: rgba(0, 216, 255, 0.12);
-    border: 1px solid var(--blue);
+    border-radius:12px;
 
-    color: #fff;
-    font-size: 15px;
-    font-weight: 800;
-    white-space: nowrap;
-
-    box-shadow:
-        0 0 18px rgba(0, 216, 255, 0.35),
-        inset 0 0 14px rgba(0, 216, 255, 0.08);
+    font-size:16px;
+    font-weight:800;
 }
 
 .profile-save-btn {
@@ -909,3 +900,35 @@ footer {
     }
 }
 
+
+/* VISITEUR */
+.grade-visiteur{
+    background:rgba(120,120,120,.15);
+    border:1px solid #8a8a8a;
+    color:#dcdcdc;
+    box-shadow:0 0 15px rgba(180,180,180,.35);
+}
+
+/* CLIENT */
+.grade-client{
+    background:rgba(0,216,255,.15);
+    border:1px solid #00d8ff;
+    color:#ffffff;
+    box-shadow:0 0 20px rgba(0,216,255,.45);
+}
+
+/* GERANT */
+.grade-gerant{
+    background:rgba(255,50,50,.15);
+    border:1px solid #ff3b3b;
+    color:#ffffff;
+    box-shadow:0 0 20px rgba(255,0,0,.50);
+}
+
+/* ADMIN */
+.grade-admin{
+    background:rgba(170,0,255,.15);
+    border:1px solid #b84cff;
+    color:#ffffff;
+    box-shadow:0 0 20px rgba(170,0,255,.50);
+}
