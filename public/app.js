@@ -1,7 +1,7 @@
 let supabaseClient = null;
 let currentUser = null;
 
-const notificationSound = new Audio("/sounds/notification.mp3");
+const notificationSound = new Audio("/sounds/notification.wav");
 notificationSound.volume = 0.4;
 
 const API_BASE = (() => {
