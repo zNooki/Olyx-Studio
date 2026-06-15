@@ -804,3 +804,22 @@ footer {
         flex-direction: column;
     }
 }
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.grade-badge {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #29e8ff, #00bfff);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    white-space: nowrap;
+}
