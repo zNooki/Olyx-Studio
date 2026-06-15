@@ -808,8 +808,7 @@ footer {
 .profile-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    gap: 15px;
 }
 
 .grade-badge {
@@ -823,3 +822,4 @@ footer {
     border: 1px solid rgba(0, 255, 255, 0.4);
     white-space: nowrap;
 }
+
