@@ -835,8 +835,8 @@ footer {
 }
 
 .profile-line .input {
-    width: 170px;
-    height: 40px;
+    width: 150px;
+    height: 48px;
     margin: 0;
     flex: none;
 }
