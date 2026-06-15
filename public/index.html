@@ -223,21 +223,26 @@
         <p class="muted">Gérez votre profil et consultez vos achats.</p>
 
         <div class="account-card">
-
-             <div class="profile-header">
-            <h2>Profil</h2>
-            <span id="accountGrade" class="grade-badge">Visiteur</span>
+            <div class="profile-header">
+                <h3>Profil</h3>
+                <span id="accountGrade" class="grade-badge">Visiteur</span>
             </div>
 
-             <div class="email-line">
-                <p><strong>Email :</strong> <span id="accountEmail"></span></p>
+            <div class="email-line">
+                <p>
+                    <strong>Email :</strong>
+                    <span id="accountEmail">Non connecté</span>
+                </p>
 
-                <button class="btn password-btn">
-                 Changer le mot de passe
+                <button
+                    class="btn password-btn"
+                    onclick="openPasswordModal()"
+                    type="button"
+                >
+                    Changer le mot de passe
                 </button>
-                </div>
-
             </div>
+
             <div class="profile-line">
                 <label for="usernameInput">Pseudo :</label>
 
