@@ -451,11 +451,14 @@ async function loadPurchases() {
 async function downloadPurchase(id) {
     const token = await getAccessToken();
 
+    console.log("TOKEN DOWNLOAD =", token);
+
     if (!token) {
         return showToast("Connexion requise", "Reconnecte-toi pour télécharger.");
     }
 
     const response = await apiFetch(`/api/download/${id}`, {
+        method: "GET",
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -469,7 +472,6 @@ async function downloadPurchase(id) {
 
     window.open(data.url, "_blank");
 }
-
 
 function openProduct(id) {
     const product = products[id];
