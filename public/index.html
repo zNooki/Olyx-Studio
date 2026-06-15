@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Olyx Studio</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Logo de l'onglet -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
+
 <body>
 
 <header class="hero">
     <nav class="navbar">
+
         <a href="/" class="site-logo">
-    <img src="images/logo.png" alt="Olyx Studio">
-    <span>Olyx Studio</span>
-</a>
+            <img src="images/logo.png" alt="Olyx Studio">
+            <span>Olyx Studio</span>
+        </a>
 
         <div class="nav-links">
+
             <a href="#mods">Mods</a>
+
             <a href="#contact">Contact</a>
-            <a href="#" onclick="showToast('Abonnement indisponible', '🚧 Le système d’abonnement n’est pas encore disponible. Reviens bientôt !'); return false;">
-    Abonnement
-</a>
+
+            <a href="#"
+               onclick="showToast(
+                   'Abonnement indisponible',
+                   '🚧 Le système d’abonnement n’est pas encore disponible. Reviens bientôt !'
+               ); return false;">
+                Abonnement
+            </a>
 
             <button id="openAuthBtn" class="nav-btn" type="button">
                 Connexion
