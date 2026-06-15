@@ -43,9 +43,8 @@ Après validation du paiement, l'achat sera ajouté automatiquement dans votre c
         image: "images/survie.png",
         tag: "Minecraft • Bedrock",
         title: "Système de jobs",
-        price: "Gratuit",
-        available: true,
-        free: true,
+        price: "4,99 €",
+        available: false,
         status: "maintenance",
         desc: `⛏️ Système de jobs Minecraft Bedrock
 
