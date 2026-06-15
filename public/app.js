@@ -605,21 +605,34 @@ async function buyProduct(productId) {
 }
 
 function showNotif() {
+
+    notificationSound.currentTime = 0;
+    notificationSound.play().catch(() => {});
+
     const notif = document.getElementById("notif");
     if (!notif) return;
 
     notif.classList.add("show");
-    setTimeout(() => notif.classList.remove("show"), 3500);
+
+    setTimeout(() => {
+        notif.classList.remove("show");
+    }, 3500);
 }
 
 function showMaintenance() {
+
+    notificationSound.currentTime = 0;
+    notificationSound.play().catch(() => {});
+
     const notif = document.getElementById("notifMaintenance");
     if (!notif) return;
 
     notif.classList.add("show");
-    setTimeout(() => notif.classList.remove("show"), 3500);
-}
 
+    setTimeout(() => {
+        notif.classList.remove("show");
+    }, 3500);
+}
 function showToast(title, message) {
 
     notificationSound.currentTime = 0;
