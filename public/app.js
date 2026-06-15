@@ -37,7 +37,7 @@ const products = {
 ✔ Compatible ox_lib, ox_inventory et ox_target
 ✔ Support inclus
 
-⚠️ Le mod est encore en évolution. Une mise à jour future est prévue.
+⚠️ Le mod est encore en évolution. Une mise à jour futur est prévue.
 
 Après validation du paiement, l'achat sera ajouté automatiquement dans votre compte.`
     },
