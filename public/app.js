@@ -360,6 +360,7 @@ async function loadAccount() {
 
     const accountEmail = document.getElementById("accountEmail");
     const usernameInput = document.getElementById("usernameInput");
+    const accountGrade = document.getElementById("accountGrade");
 
     if (accountEmail) {
         accountEmail.textContent = result.user?.email || currentUser.email || "Email inconnu";
@@ -367,6 +368,10 @@ async function loadAccount() {
 
     if (usernameInput) {
         usernameInput.value = result.profile?.username || "";
+    }
+
+    if (accountGrade) {
+        accountGrade.textContent = result.profile?.grade || "Visiteur";
     }
 
     await loadPurchases();
