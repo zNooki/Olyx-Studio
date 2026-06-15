@@ -1,6 +1,9 @@
 let supabaseClient = null;
 let currentUser = null;
 
+const notificationSound = new Audio("/sounds/notification.mp3");
+notificationSound.volume = 0.4;
+
 const API_BASE = (() => {
     const isFile = window.location.protocol === "file:";
     const isLiveServer = ["5500", "5501", "5502"].includes(window.location.port);
@@ -618,6 +621,26 @@ function showMaintenance() {
 }
 
 function showToast(title, message) {
+
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.value = 850;
+
+    gain.gain.value = 0.03;
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+
+    setTimeout(() => {
+        osc.stop();
+    }, 120);
+
     const toast = document.getElementById("toast");
 
     if (!toast) {
@@ -629,7 +652,10 @@ function showToast(title, message) {
     document.getElementById("toastText").textContent = message;
 
     toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 3500);
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3500);
 }
 
 function translateAuthError(message) {
