@@ -932,3 +932,20 @@ footer {
     color:#ffffff;
     box-shadow:0 0 20px rgba(170,0,255,.50);
 }
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.site-logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
