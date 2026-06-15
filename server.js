@@ -207,7 +207,7 @@ app.get("/api/me", async (req, res) => {
 
     let { data: profile, error } = await supabaseAdmin
         .from("profiles")
-        .select("id, email, username, avatar_url, created_at")
+        .select("id, email, username, avatar_url, grade, created_at")
         .eq("id", user.id)
         .single();
 
@@ -217,9 +217,10 @@ app.get("/api/me", async (req, res) => {
             .insert({
                 id: user.id,
                 email: user.email,
-                username: ""
+                username: "",
+                grade: user.email === "devznooki@gmail.com" ? "Gérant" : "Visiteur"
             })
-            .select("id, email, username, avatar_url, created_at")
+            .select("id, email, username, avatar_url, grade, created_at")
             .single();
 
         profile = insert.data;
