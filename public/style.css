@@ -811,3 +811,47 @@ footer {
 
     box-shadow:0 0 20px rgba(0,216,255,.55);
 }
+
+.profile-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:35px;
+}
+
+.profile-title h2{
+    color:#fff;
+    font-size:52px;
+    font-weight:900;
+    text-shadow:0 0 25px rgba(0,255,255,.6);
+}
+
+.profile-title span{
+    width:180px;
+    height:4px;
+    border-radius:999px;
+    background:#00eaff;
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff,
+        0 0 30px #00eaff;
+}
+
+.profile-line{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.grade-badge{
+    padding:10px 22px;
+    border-radius:999px;
+    background:#11dfff;
+    color:#fff;
+    font-weight:700;
+    box-shadow:
+        0 0 15px rgba(17,223,255,.8),
+        0 0 35px rgba(17,223,255,.4);
+}
