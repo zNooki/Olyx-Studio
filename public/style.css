@@ -778,80 +778,134 @@ footer {
     }
 }
 
-
-
-
-
-.profile-header{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:20px;
-    margin-bottom:20px;
-}
-
-.profile-header h2{
-    margin:0;
-}
-
-.grade-badge{
-    position:relative;
-    top:2px;
-
-    padding:8px 18px;
-
-    border-radius:999px;
-
-    background:linear-gradient(180deg,#20e4ff,#08bde9);
-
-    color:#fff;
-    font-size:14px;
-    font-weight:800;
-
-    border:1px solid rgba(255,255,255,.18);
-
-    box-shadow:0 0 20px rgba(0,216,255,.55);
-}
+/* Profil compte - corrigé */
 
 .profile-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    margin: 0 0 28px;
+    gap: 16px;
+    margin: 0 0 30px;
 }
 
 .profile-title h2 {
     margin: 0;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 900;
     color: #fff;
     text-align: center;
-    text-shadow: 0 0 16px rgba(0,216,255,0.45);
+    text-shadow: 0 0 18px rgba(0, 216, 255, 0.45);
 }
 
 .profile-title span {
-    width: 80px;
+    width: 95px;
     height: 2px;
     border-radius: 999px;
     background: linear-gradient(90deg, transparent, var(--blue), transparent);
-    box-shadow: 0 0 14px var(--blue);
+    box-shadow: 0 0 16px var(--blue);
 }
 
-.profile-line{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    flex-wrap:wrap;
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.grade-badge{
-    padding:10px 22px;
-    border-radius:999px;
-    background:#11dfff;
-    color:#fff;
-    font-weight:700;
+.profile-header h2,
+.profile-header h3 {
+    margin: 0;
+}
+
+.profile-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.profile-line label {
+    min-width: 80px;
+    margin: 0;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.profile-line .input {
+    width: 170px;
+    height: 48px;
+    margin: 0;
+    flex: none;
+}
+
+.grade-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+    height: 48px;
+    padding: 0 20px;
+    margin: 0;
+
+    border-radius: 12px;
+    background: rgba(0, 216, 255, 0.12);
+    border: 1px solid var(--blue);
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+
     box-shadow:
-        0 0 15px rgba(17,223,255,.8),
-        0 0 35px rgba(17,223,255,.4);
+        0 0 18px rgba(0, 216, 255, 0.35),
+        inset 0 0 14px rgba(0, 216, 255, 0.08);
 }
+
+.profile-save-btn {
+    height: 48px;
+    margin: 0 0 0 auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .profile-title {
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .profile-title h2 {
+        font-size: 30px;
+    }
+
+    .profile-title span {
+        width: 55px;
+    }
+
+    #accountModal .profile-line {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    #accountModal .profile-line label {
+        min-width: auto;
+    }
+
+    #accountModal .profile-line .input,
+    #accountModal .grade-badge,
+    #accountModal .profile-save-btn {
+        width: 100%;
+        min-width: 100%;
+        height: 48px;
+    }
+
+    #accountModal .profile-save-btn {
+        margin-left: 0;
+    }
+}
+
